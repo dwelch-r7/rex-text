@@ -22,7 +22,8 @@ module Rex
     # Base64 decoder
     #
     def self.decode_base64(str)
-      str.to_s.unpack("m")[0]
+      # The "m" directive returns a String, including when decoding empty input.
+      str.to_s.unpack("m")[0] #: String
     end
 
     #
