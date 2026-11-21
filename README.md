@@ -24,6 +24,21 @@ Or install it yourself as:
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
+### Type checking
+
+Ruby 3.3 or later is required for the separate typing bundle:
+
+```sh
+BUNDLE_GEMFILE=gemfiles/typing.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/typing.gemfile bundle exec steep check
+```
+
+Steep currently checks the four Base64 helpers. To extend coverage, add source
+files to `Steepfile` and their signatures under `typing/`. These partial
+development signatures live outside the default `sig/` directory so downstream
+RBS consumers do not load an incomplete gem API. The ordinary development bundle
+and gem runtime requirements are unchanged.
+
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing

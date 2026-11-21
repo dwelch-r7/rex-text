@@ -1,0 +1,8 @@
+module Rex
+  module Text
+    def self.encode_base64: (_ToS, ?String?) -> String
+    def self.decode_base64: (_ToS) -> String
+    def self.encode_base64url: (_ToS, ?String?) -> String
+    def self.decode_base64url: (String) -> String
+  end
+end
